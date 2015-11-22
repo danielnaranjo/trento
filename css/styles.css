@@ -1,0 +1,33 @@
+body {
+	font-family: 'Roboto', sans-serif;
+}
+section {
+	margin: 250px auto 0 auto;
+}
+.leblue, .panel-heading {
+	background-color: #4997EE !important;
+}
+nav a, .panel-heading, footer a {
+	color: #fff !important;
+}
+.panel-heading {
+	padding: 20px;
+}
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: auto;
+	background-color: #2D5896;
+	color: #fff;
+	padding: 20px;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+	background-color: #2D5896 !important;
+}
+.navbar-brand {
+	font-size: 3em !important;
+}
+nav {
+	padding: 20px !important;
+}
