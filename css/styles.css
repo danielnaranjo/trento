@@ -43,6 +43,10 @@ aside {
 	padding: 100px 20px 0 20px;
 }
 
+.btn {
+	margin: 50px auto !important;
+}
+
 /* animate.css */
 @-webkit-keyframes hue {
   from {

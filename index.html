@@ -30,7 +30,7 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li class="active"><a href="#">Home</a></li>
 						<li><a href="#about">Sign in / Sign Up</a></li>
-						<li><a href="#contact">Get in touch!</a></li>
+						<li><a id="hireMe">Get in touch!</a></li>
 					</ul>
 				</div>
 			</div>
@@ -67,17 +67,15 @@
 				<form action="">
 					<div class="form-group">
 						<textarea class="form-control" rows="5" col="3" onkeyup="countChar(this)"></textarea>
-						<small class="pull-right">
+						<small class="pull-right" style="visibility:hidden;">
 							<span id="charNum">0</span> characters
 						</small>
 					</div>
-					<button class="btn btn-lg btn-block btn-default">
+					<button id="sendIt" class="btn btn-lg btn-block btn-default disabled">
 						Send it!
 					</button>
+					<div id="stopped" style="display:none;"></div>
 				</form>
-				<div id="stopped" style="display:none;">
-					<p>Oh no! There is not space!</p>
-				</div>
 			</div>
 		</div>
 	</aside>
@@ -85,10 +83,10 @@
 	<footer class="footer">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-8 col-sm-8 col-xs-12">
+				<div class="col-md-10 col-sm-10 col-xs-12">
 					&copy 2015 Trento is a demo assigment for <a href="//real-trends.com/?utm_source=trento&utm_campaing=assigments&utm_medium=referral" target="_blank">Real Trends</a>
 				</div>
-				<div class="col-md-4 col-sm-4 hidden-xs">
+				<div class="col-md-2 col-sm-2 hidden-xs">
 					Crafted by <a href="//danielnaranjo.info/?utm_source=trento&utm_campaing=assigments&utm_medium=referral" target="_blank">Daniel Naranjo</a>
 				</div>
 			</div>

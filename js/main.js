@@ -8,13 +8,14 @@ function countChar(val) {
 	} else {
 		$('#charNum').html(allowCharacters - len);
 	}
-	if(len==140) {
+	if($('textarea').val().length>=allowCharacters) {
+		$('#sendIt').addClass('disabled');
 		console.log('Stop!');
 	}
 }
 
 $(function(){
-	// for test propuse
+	// for test propose
 	console.log('Got it!');
 
 	//hide until log in
@@ -22,12 +23,22 @@ $(function(){
 
 	$('button').on('click', function(){
 		$('aside').css('display','inline').addClass('animated fadeInLeft');
-		$('#loginPanel').addClass('animated fadeOutDown');//.delay(200).css('display','none')
+		$('#loginPanel').addClass('animated fadeOutDown');
+
+		// Funny thing is allowed ;)
+		$('#hireMe').attr('href','mailto:daniel@loultimoenlaweb.com?subject=Trento is OK&body=Nice one!');
+
 	});
 
 	$('textarea').on('keyup', function(){
+		// Show characters remain and remove disabled from button
+		$('small').css('visibility','visible').addClass('animated shake');
+		$('#sendIt').removeAttr('disabled').removeClass('disabled');
+
+		// Check if textarea is in range, then..  
 		if($('textarea').val().length==allowCharacters){
-			$('#stopped').addClass('animated bounceInUp').removeClass('display');
+			$('#stopped').html('<p>Oh no! There is not space!</p>').css('display','');
+			$('#stopped').addClass('animated bounceInUp');
 		}
 	});
 
