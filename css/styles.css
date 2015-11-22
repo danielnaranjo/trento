@@ -31,3 +31,25 @@ nav a, .panel-heading, footer a {
 nav {
 	padding: 20px !important;
 }
+
+aside {
+	background-color: #254B7F;
+	color: #FFF;
+	height: 100%;
+	width: 300px;
+	top: 0;
+	left: 0;
+	position: absolute;
+	padding: 100px 20px 0 20px;
+}
+
+/* animate.css */
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
+}
