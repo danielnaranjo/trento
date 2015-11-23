@@ -47,4 +47,11 @@ $(function(){
 		}
 	});
 
+	// for test propose
+	$('#listed ul').html('');
+	$.getJSON('js/sample.json', function(data){
+		$('#listed ul').append('<li>Cargada!</li>');
+		console.log('data', data);
+		$('#listed ul').append('<li>Hola</li>');
+	});
 });

@@ -49,6 +49,11 @@ aside {
 	margin: 50px auto !important;
 }
 
+#listed div {
+	background-color: #f90 !important;
+	top: -150px;
+}
+
 #listed:hover {
 	background-color: #ddd;
 }
@@ -60,6 +65,16 @@ aside {
 }
 #listed a:hover i {
 	color: #aaa;
+}
+
+#listed ul {
+	margin: o;
+	padding: 0;
+}
+#listed ul li {
+	padding: 0;
+	margin: 0;
+	list-style: none;
 }
 
 @-webkit-keyframes hue {
