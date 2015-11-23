@@ -17,6 +17,8 @@ function countChar(val) {
 $(function(){
 	// for test propose
 	console.log('Got it!');
+	// Fire tooltip widget!
+	//$('[data-toggle="tooltip"]').tooltip();
 
 	//hide until log in
 	$('aside').css('display','none');
@@ -24,6 +26,9 @@ $(function(){
 	$('button').on('click', function(){
 		$('aside').css('display','inline').addClass('animated fadeInLeft');
 		$('#loginPanel').addClass('animated fadeOutDown');
+
+		$('#start').css('display','none');
+		$('#listed').css('display','inline').addClass('animated fadeInUp');
 
 		// Funny thing is allowed ;)
 		$('#hireMe').attr('href','mailto:daniel@loultimoenlaweb.com?subject=Trento is OK&body=Nice one!');
