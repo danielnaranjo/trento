@@ -26,9 +26,20 @@ get '/private' do
 end
 
 get '/login' do
-	session[:admin] = true
-	"You're Logged"
+	#session[:admin] = true
+	#"You're Logged"
+	redirect to ('/auth/twitter')
 end
+
+get '/auth/twitter/callback' do
+	env['omniauth.auth'] ? session[:admin] = true : halt(401,'Not Authorized')
+	"You're in!"
+end
+
+get '/auth/failure' do
+	params[:message]
+end
+
 
 get '/logout' do
 	session[:admin] = nil
