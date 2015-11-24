@@ -57,6 +57,7 @@ $(function(){
 			$.each(data, function(i, field){
 				// Da Tweet
 				$("#listed ul").append('<li id="'+data[i].id+'"><div class="col-md-2"><img src="'+data[i].img+'" alt="avatar" class="img-rounded img-responsive"></div><div class="col-md-9"><h2>'+data[i].title+'</h2><p>'+moment(data[i].date).toNow()+' by <a href="javascript:;" data-toggle="modal" data-target="#myModal" >'+data[i].username+'</a></p><p id="options'+data[i].id+'"></p></div></li>');//="//www.twitter.com/'+data[i].username+'"
+				
 				// Reply :)
 				$('#options'+data[i].id).append('<a href="#'+data[i].id+'" data-toggle="tooltip" data-placement="bottom" title="Reply to this guy!"><i class="fa fa-reply"></i></a> ');
 				// Like
