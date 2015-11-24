@@ -50,7 +50,7 @@ aside {
 }
 
 #listed div {
-	background-color: #f90 !important;
+	/*background-color: #f90 !important;*/
 	top: -150px;
 }
 
@@ -68,14 +68,18 @@ aside {
 }
 
 #listed ul {
-	margin: o;
-	padding: 0;
+	margin-top:200px;
 }
 #listed ul li {
-	padding: 0;
-	margin: 0;
 	list-style: none;
 }
+#listed img:hover {
+	opacity: .8;
+}
+#listed .col-md-9 {
+	margin-top: -25px;
+}
+
 
 @-webkit-keyframes hue {
   from {

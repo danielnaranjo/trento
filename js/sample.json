@@ -95,7 +95,7 @@
       "screen_name": "twitterapi"
     },
     "in_reply_to_screen_name": null,
-    "source": "<a href="//sites.google.com/site/yorufukurou/%5C%22" rel="\"nofollow\"">YoruFukurou</a>",
+    //"source": "<a href="//sites.google.com/site/yorufukurou/%5C%22" rel="\"nofollow\"">YoruFukurou</a>",
     "in_reply_to_status_id": null
   },
   {
@@ -194,7 +194,7 @@
       "screen_name": "twitterapi"
     },
     "in_reply_to_screen_name": null,
-    "source": "<a href="//sites.google.com/site/yorufukurou/%5C%22" rel="\"nofollow\"">YoruFukurou</a>",
+    //"source": "<a href="//sites.google.com/site/yorufukurou/%5C%22" rel="\"nofollow\"">YoruFukurou</a>",
     "in_reply_to_status_id": null
   }
 ]
