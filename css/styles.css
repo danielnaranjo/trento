@@ -16,7 +16,6 @@ nav a, .panel-heading, footer a {
 	padding: 20px;
 }
 .footer {
-	position: absolute;
 	bottom: 0;
 	width: 100%;
 	height: auto;
