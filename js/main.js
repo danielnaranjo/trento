@@ -77,7 +77,7 @@ $(function(){
 				$("#listed ul").append('<li id="'+data[i].id+'" class="box"><div class="col-md-2"><img src="'+data[i].user.profile_image_url+'" alt="avatar" class="img-rounded img-responsive"></div><div class="col-md-9"><h2>'+data[i].text+'</h2><p><span id="options'+data[i].id+'"></span> '+moment(data[i].created_at).toNow()+' by <a target="_blank" href="//twitter.com/'+data[i].user.screen_name+'">'+data[i].user.screen_name+'</a></p></div></li>').addClass('animated bounceInUp');
 				
 				// Reply :)
-				$('#options'+data[i].id).append('<a href="/replyTo/'+data[i].id+'" data-toggle="tooltip" data-placement="bottom" title="Reply to this guy!"><i class="fa fa-reply"></i></a>');//'+ data[i].retweet_count+'
+				$('#options'+data[i].id).append('<a href="/replyTo/'+data[i].id+'" title="Reply to this guy!"><i class="fa fa-reply"></i></a>');//'+ data[i].retweet_count+'
 				// Like
 				$('#options'+data[i].id).append('<a href="/api/loveIt/'+data[i].id+'" title="Loves... Likes... Favorites... All verbs means the same"><i class="fa fa-heart"></i></a>');//'+ data[i].favorite_count+'
 				// Delete
@@ -85,8 +85,15 @@ $(function(){
 				// More
 				$('#options'+data[i].id).append('<a href="javascript:;" data-toggle="modal" data-target="#myModal" title="More option will be great!"><i class="fa fa-ellipsis-h"></i></a>');
 
-				$('#options'+data[i].id).attr('data-toggle="tooltip" data-placement="bottom"');
+				$('#options'+data[i].id+' a').attr('data-toggle="tooltip" data-placement="bottom"');
 			});
+		})
+		.error(function() {
+			$('#listed h3').html("Can't connect to server. Please check your Internet connection.");
+			setTimeout(function(){
+				getMore();
+				$('#listed h4').html('Retrying fetch data every 10 seconds..');
+			},10000);
 		});
 	}
 
