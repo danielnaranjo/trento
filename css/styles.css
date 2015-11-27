@@ -72,12 +72,53 @@ aside {
 }
 #listed ul li {
 	list-style: none;
+	padding-bottom: 30px;
 }
 #listed img:hover {
 	opacity: .8;
 }
 #listed .col-md-9 {
 	margin-top: -25px;
+}
+
+/*.ListOver {
+	position: relative;
+	top: 0px;
+	left: -100px;
+	width: 100%;
+	height: 100%;
+	background-color: #f90;
+	opacity: .5;
+	display: none;
+	cursor: pointer;
+}*/
+
+/*.box .overlay {
+	display:none;
+}
+
+​.box:hover .overlay {
+	display:block;   
+}​*/
+
+#more {
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+	top: 200px;
+	width: auto;
+	height: auto;
+	background-color: #254B7F;
+	color: #fff;
+	padding: 20px;
+	display: none;
+
+	-webkit-border-top-left-radius: 20px;
+	-webkit-border-bottom-left-radius: 20px;
+	-moz-border-radius-topleft: 20px;
+	-moz-border-radius-bottomleft: 20px;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
 }
 
 

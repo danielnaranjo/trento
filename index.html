@@ -59,18 +59,16 @@
 			</div>
 			<div class="row" id="listed" style="display:none;">
 				<div class="col-md-9 col-md-offset-3">
-					<p>
-						<a href="javascript:;" class="pull-right" onClick="loadAgain()">
-							<i class="fa fa-refresh"></i>
-						</a>
-					</p>
 					<ul>
 						<li>
-							Loading...
+							<h3>Loading...</h3>
 						</li>
 					</ul>	
 				</div>
 			</div>
+		</div>
+		<div id="more" class="pull-right">
+			<i class="fa fa-refresh fa-1x"></i>
 		</div>
 	</section>
 
@@ -95,27 +93,21 @@
 		<div class="row">
 			<div class="col-md-12">
 				<h3 id="name"></h3>
-				<p id="nickname"></p>
 				<p id="description"></p>
-				<p id="url"></p>
 				<p id="join"></p>
+				<p id="url"></p>
 			</div>
 		</div>
 	</aside>
 
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document">
+		<div class="modal-dialog modal-sm" role="document">
 			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
-				</div>
 				<div class="modal-body">
 					Hello World
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
 				</div>
 			</div>
 		</div>
@@ -137,6 +129,7 @@
 	<!-- js -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script scr="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/modal.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/tooltip.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax-min.js"></script>
