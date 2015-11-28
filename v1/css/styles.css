@@ -121,6 +121,16 @@ aside {
 	border-bottom-left-radius: 20px;
 }
 
+.grid-item { 
+	height: auto;
+	padding: 10px;
+	/*margin: 0 10px 0 0;*/
+	width: 230px;
+	background-color: #f90;
+
+	vertical-align: top;
+	display: inline-block;
+}
 
 @-webkit-keyframes hue {
   from {

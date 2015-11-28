@@ -63,7 +63,7 @@ $(function(){
 	// for test propose
 	function getMore() {
 		$.getJSON('http://localhost:8890/trento/api/me', function(data){ //js/sample2.json
-			$('#listed ul').html('');
+			$('#listed ul.grid').html('');
 			$('#more').css('display','inline').addClass('animated fadeIn');
 			$('footer').addClass('animated bounceOutDown');
 
@@ -74,7 +74,8 @@ $(function(){
 				$('#join').html('Playing here since '+moment(data[i].user.created_at).toNow());
 
 				// Da Tweet
-				$("#listed ul").append('<li id="'+data[i].id+'" class="box"><div class="col-md-2"><img src="'+data[i].user.profile_image_url+'" alt="avatar" class="img-rounded img-responsive"></div><div class="col-md-9"><h2>'+data[i].text+'</h2><p><span id="options'+data[i].id+'"></span> '+moment(data[i].created_at).toNow()+' by <a target="_blank" href="//twitter.com/'+data[i].user.screen_name+'">'+data[i].user.screen_name+'</a></p></div></li>').addClass('animated bounceInUp');
+				//<div class="col-md-2"><img src="'+data[i].user.profile_image_url+'" alt="avatar" class="img-rounded img-responsive"></div>
+				$("#listed ul").append('<li id="'+data[i].id+'" class="grid-item"><div class="grid-item"><p>'+data[i].text+'</p><p><span id="options'+data[i].id+'"></span> '+moment(data[i].created_at).toNow()+' by <a target="_blank" href="//twitter.com/'+data[i].user.screen_name+'">'+data[i].user.screen_name+'</a></p></div></li>').addClass('animated bounceInUp');
 				
 				// Reply :)
 				$('#options'+data[i].id).append('<a href="/replyTo/'+data[i].id+'" title="Reply to this guy!"><i class="fa fa-reply"></i></a>');//'+ data[i].retweet_count+'
@@ -105,4 +106,6 @@ $(function(){
 	});
 	// Fire tooltip widget!
 	$('[data-toggle="tooltip"]').tooltip();
+
+	$('.grid').masonry();
 });
