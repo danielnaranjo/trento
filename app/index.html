@@ -1,0 +1,157 @@
+<!doctype html>
+<html ng-app="trentoApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Trento</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <meta name="base" content="!">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+    <!-- cdn's -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.10.1/bootstrap-social.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
+  </head>
+  <body>
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <header>
+      <nav class="navbar navbar-default navbar-fixed-top leblue" ng-controller="NavbarCtrl" >
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/">Trento</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a href="#/main">Home</a></li>
+
+              <li ng-hide="twitter==''">
+                <a href="javascript:;" ng-click="login()">
+                  Sign in / Sign Up
+                </a>
+              </li>
+
+              <li ng-show="twitter==''">
+                <a href="javascript:;">
+                  Hello {{ twitter.displayName }}
+                </a>
+              </li>
+              <li ng-show="twitter==''">
+                <a href="#/logout">
+                  Logout
+                </a>
+              </li>
+
+              <li><a id="hireMe" href="{{hireMe}}">Get in touch!</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div ng-view=""></div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 col-sm-6 col-xs-12">
+            &copy 2015 Trento is a demo assigment for <a href="//real-trends.com/?utm_source=trento&utm_campaing=assigments&utm_medium=referral" target="_blank">Real Trends</a> (AngularJs + Sinatra)
+          </div>
+          <div class="col-md-3 col-sm-6 hidden-xs">
+            Crafted by <a href="//danielnaranjo.info/?utm_source=trento&utm_campaing=assigments&utm_medium=referral" target="_blank">Daniel Naranjo</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/angular-moment/angular-moment.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/login.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/logout.js"></script>
+    <script src="scripts/controllers/profile.js"></script>
+    <script src="scripts/services/user.js"></script>
+    <script src="scripts/controllers/navbar.js"></script>
+    <!-- endbuild -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/0.10.3/angular-moment.min.js"></script>
+
+    <script>
+      $(function(){
+
+        $(window).scroll(function() {
+          if($(this).scrollTop()>0) {
+            $('aside').css('height','2000px').addClass('animated fadeOutLeft');
+          // } else {
+            // $('aside').addClass('animated fadeInLeft');
+          }
+          if($(this).scrollTop()<10) {
+            $('aside').removeClass('fadeOutLeft').addClass('bounceInLeft');
+          }
+        });
+
+        $('textarea').on('keyup', function(){
+          // Show characters remain and remove disabled from button
+          $('small').css('visibility','visible').addClass('animated shake');
+          $('#sendIt').removeAttr('disabled').removeClass('disabled');
+
+          // Check if textarea is in range, then..  
+          if($('textarea').val().length==allowCharacters){
+            $('#stopped').html('<p>Oh no! There is not space!</p>').css('display','');
+            $('#stopped').addClass('animated bounceInUp');
+          }
+        });
+
+      });
+    </script>
+
+</body>
+</html>

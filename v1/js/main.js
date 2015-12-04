@@ -14,6 +14,28 @@ function countChar(val) {
 	}
 }
 
+/* https://stackoverflow.com/questions/19491336/get-url-parameter-jquery/21903119#21903119 */
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+
+var username = getUrlParameter('u');
+var token = getUrlParameter('t');
+var secret = getUrlParameter('s');
+
+var referrer =  document.referrer;
+
 $(function(){
 	// for test propose
 	console.log('Got it!');
@@ -61,8 +83,10 @@ $(function(){
 
 
 	// for test propose
+	//Static -> js/sample2.json
+	//PHP ->http://localhost:8890/trento/api/me
 	function getMore() {
-		$.getJSON('http://localhost:8890/trento/api/me', function(data){ //js/sample2.json
+		$.getJSON(referrer, function(data){ 
 			$('#listed ul.grid').html('');
 			$('#more').css('display','inline').addClass('animated fadeIn');
 			$('footer').addClass('animated bounceOutDown');
