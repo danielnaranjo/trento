@@ -1,60 +1,10 @@
 <section>
   <div class="container">
-    <div class="row" id="listed" ng-init="getMore()">
-      <div class="col-md-9 col-md-offset-3 col-sm-12 col-xs-12" style="margin-top:150px;">
-        <div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="tweet in tweets">
-          <h3 ng-hide="tweets">Loading...</h3>
-          <div class="panel panel-primary">
-            <div class="panel-body" style="min-height:200px;">
-              <h4 ng-bind-html="tweet.text|linky:'_blank'"></h4>
-              <p class="text-right" am-time-ago="tweet.created_at"></p>
-            </div>
-            <div class="panel-footer">
-              <a target="_blank" href="//twitter.com/{{tweet.user.screen_name}}">
-                <img class="img-responsive img-circle" src="{{tweet.user.profile_image_url}}" alt="{{tweet.user.screen_name}}" align="left" style="margin-right:10px;">
-              </a>
-              <br/>
-              <ul style="">
-                <li><a href="/replyTo/" title="Reply to this guy!"><i class="fa fa-reply"></i></a></li>
-                <li><a href="/loveIt/"  title="Loves... Likes... Favorites... All verbs means the same"><i class="fa fa-heart"></i></a></li>
-                <li><a href="/delete/" title="oh boy! delete! delete! delete!"><i class="fa fa-trash"></i></a></li>
-                <li><a href="#" title="More option will be great!"><i class="fa fa-ellipsis-h"></i></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+    <div class="row" id="start">
+      <div class="text-center col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-4 col-xs-12">
+        <h2>Simple Twitter client</h2>
+        <p>It's for test propuse.</p>
       </div>
     </div>
   </div>
-  <div id="more" class="pull-right">
-    <i class="fa fa-refresh fa-1x"></i>
-  </div>
 </section>
-<aside>
-  <div class="row">
-    <div class="col-md-12">
-      <form action="">
-        <div class="form-group">
-          <textarea class="form-control" rows="5" col="3" placeholder="Start here.." ng-model="data.tuit"></textarea>
-          <small class="pull-right">
-            {{ 140 - data.tuit.length }} characters
-          </small>
-        </div>
-        <button
-          class="btn btn-lg btn-block btn-default" 
-          ng-disabled="data.tuit.length < 5 || data.tuit.length >= 141" 
-          ng-class="{'btn-warning': data.tuit.length >= 120, 'btn-danger': data.tuit.length >= 141 }">
-          Send it!
-        </button>
-      </form>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <h3 id="name"></h3>
-      <p id="description"></p>
-      <p id="join"></p>
-      <p id="url"></p>
-    </div>
-  </div>
-</aside>

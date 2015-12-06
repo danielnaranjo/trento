@@ -17,8 +17,8 @@ var app = angular
     'ngRoute',
     'ngSanitize', 
     'ngTouch',
-    'angularMoment'
-    //,'firebase'
+    'angularMoment',
+    'firebase'
   ]);
 
   app.config(function ($routeProvider) {
@@ -31,12 +31,12 @@ var app = angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/logout', {
-        controller: 'LogoutCtrl',
-        redirectTo: '/login'
+      .when('/profile', {
+        templateUrl: 'views/profile.html',
+        controller: 'ProfileCtrl'
       })
       .otherwise({
-        redirectTo: '/login'
+        redirectTo: '/main'
       });
 
   });

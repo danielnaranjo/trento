@@ -7,7 +7,7 @@
  * # LogoutCtrl
  * Controller of the trentoApp
  */
-app.controller('LogoutCtrl', function ($location, toastr, User) {    
+app.controller('LogoutCtrl', function ($location, toastr, Auth) {    
     toastr.info('You have been logged out');
     User.data = '';
     $location.path('/');
