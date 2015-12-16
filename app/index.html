@@ -27,7 +27,7 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <header>
+    <header ng-controller="ProfileCtrl">
       <nav class="navbar navbar-default navbar-fixed-top leblue">
         <div class="container">
           <div class="navbar-header">
@@ -39,30 +39,30 @@
             </button>
             <a class="navbar-brand" href="#/">Trento</a>
           </div>
-          <div id="navbar" class="collapse navbar-collapse" ng-controller="MainCtrl">
+          <!-- <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
               <li class="active"><a href="#/main">Home</a></li>
 
-              <li ><!-- ng-if='!auth.user' -->
+              <li>
                 <a href="#/login">
-                  Sign in / Sign Up{{auth}}
+                  Sign in / Sign Up {{logged}}
                 </a>
               </li>
 
-              <!-- <li ng-if='auth.user'>
+              <li>
                 <a href="javascript:;">
-                  Hello {{ auth.user.thirdPartyUserData.screen_name }}
+                  Hello
                 </a>
               </li>
-              <li ng-if='auth.user'>
-                <a ng-click='logout()'>
+              <li>
+                <a href="#/logout">
                   Logout
                 </a>
-              </li> -->
+              </li>
 
               <li><a id="hireMe" href="{{hireMe}}">Get in touch!</a></li>
             </ul>
-          </div>
+          </div> -->
         </div>
       </nav>
     </header>
@@ -75,7 +75,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-9 col-sm-6 col-xs-12">
-            &copy 2015 Trento is a demo assigment for <a href="//real-trends.com/?utm_source=trento&utm_campaing=assigments&utm_medium=referral" target="_blank">Real Trends</a> (AngularJs + Sinatra)
+            &copy 2015 Trento is a demo assigment for <a href="//real-trends.com/?utm_source=trento&utm_campaing=assigments&utm_medium=referral" target="_blank">Real Trends</a>
           </div>
           <div class="col-md-3 col-sm-6 hidden-xs">
             Crafted by <a href="//danielnaranjo.info/?utm_source=trento&utm_campaing=assigments&utm_medium=referral" target="_blank">Daniel Naranjo</a>

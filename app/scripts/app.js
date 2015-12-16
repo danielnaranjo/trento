@@ -35,8 +35,15 @@ var app = angular
         templateUrl: 'views/profile.html',
         controller: 'ProfileCtrl'
       })
+      .when('/logout', {
+        templateUrl: 'views/main.html',
+        controller: 'LogoutCtrl'
+      })
       .otherwise({
-        redirectTo: '/main'
+        redirectTo: '/login'
       });
+  });
 
+  app.constant('CONFIG', {
+    'aURL':'https://guarded-journey-1782.herokuapp.com'
   });
